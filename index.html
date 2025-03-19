@@ -111,5 +111,48 @@
         </div>
     </footer>
     
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tampilkan pop-up saat halaman dimuat
+            let konfirmasi = confirm("PENTING!\n\nUntuk Membuat EFIN, Wajib ingat gmail dan nomor hp yang terikat di NPWP tersebut.\n\nJika tidak ingat, JANGAN isi formulir ini karena EFIN tidak akan bisa dibuat!");
+            
+            if (konfirmasi) {
+                // Jika user klik OK, tampilkan pesan kedua
+                let pesanPengingat = document.createElement('div');
+                pesanPengingat.innerHTML = `
+                    <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                                background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                                max-width: 400px; text-align: center; z-index: 1000;">
+                        <h3 style="color: #d9534f; margin-bottom: 15px;">MOHON DIBACA!</h3>
+                        <p style="font-size: 16px; line-height: 1.5;">
+                            Pastikan Anda mengingat:<br>
+                            - Gmail yang terdaftar di NPWP<br>
+                            - Nomor HP yang terdaftar di NPWP<br><br>
+                            <span style="color: #d9534f; font-weight: bold;">PERHATIAN:</span><br>
+                            Jika Anda tidak mengingat data di atas,<br>
+                            mohon JANGAN melanjutkan pengisian formulir<br>
+                            karena EFIN tidak akan bisa dibuat!
+                        </p>
+                        <div id="timer" style="font-weight: bold; margin: 10px 0;"></div>
+                    </div>
+                `;
+                document.body.appendChild(pesanPengingat);
+
+                // Timer 10 detik
+                let waktuTersisa = 10;
+                let timer = setInterval(() => {
+                    document.getElementById('timer').textContent = `Pesan ini akan hilang dalam ${waktuTersisa} detik`;
+                    waktuTersisa--;
+                    if (waktuTersisa < 0) {
+                        clearInterval(timer);
+                        document.body.removeChild(pesanPengingat);
+                    }
+                }, 1000);
+            } else {
+                // Jika user klik Cancel, redirect ke halaman lain atau tutup tab
+                window.location.href = "https://www.pajak.go.id";
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
